@@ -2,12 +2,14 @@
 <manifest>
   <remote name="aosp" fetch="https://android.googlesource.com/" />
   <remote name="github" fetch="https://github.com/primiano/" />
+  <remote name="ramax" fetch="https://github.com/ramax/" />
   <default revision="udoo-android-4.3-v2.0" remote="github" sync-j="4" />
 
   <!-- Forked projects on GitHub -->
-  <project path="build" name="platform_build">
+  <project remote="ramax" path="build" name="platform_build">
     <copyfile src="core/root.mk" dest="Makefile" />
     <copyfile src="udoo/make_sd.sh" dest="make_sd.sh" />
+    <copyfile src="udoo/make_sd2.sh" dest="make_sd2.sh" />
     <copyfile src="udoo/setup" dest="setup" />
   </project>
   <project path="bootable/bootloader/uboot-imx" name="udoo_bootable_bootloader_uboot-imx" />
